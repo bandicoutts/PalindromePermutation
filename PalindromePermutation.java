@@ -14,13 +14,27 @@ Thought process for MVP:
 
  */
 
-
-
+import java.util.*;
 
 class PalindromePermutation {
 
+    private java.util.HashMap<Character, Integer> mapOfChars = new java.util.HashMap<Character, Integer>();
+
+
+    private static String getInput(){
+        String result;
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        result = reader.nextLine();
+        return result;
+    }
+
+
+
 
     public static void main(String args[]){
+
+        String palindrome = getInput();
 
     }
 }
