@@ -27,7 +27,9 @@ class PalindromePermutation {
         return result;
     }
 
-    private static void countCharacters(String string){
+    private static boolean countCharacters(String string){
+
+
         java.util.HashMap<Character, Integer> mapOfChars = new java.util.HashMap<Character, Integer>();
         for (Character c: string.replaceAll("\\s","").toLowerCase().toCharArray()){
             if (mapOfChars.get(c) == null){
@@ -36,7 +38,21 @@ class PalindromePermutation {
                 mapOfChars.put(c, mapOfChars.get(c)+1);
             }
         }
-        System.out.println(mapOfChars);
+
+        int oddCount = 0;
+
+        for (int i : mapOfChars.values()){
+            if (i % 2 != 0){
+                oddCount += 1;
+            }
+
+        }
+
+        if (oddCount > 1){
+            return false;
+        } else {
+            return true;
+        }
     }
 
 
@@ -45,7 +61,12 @@ class PalindromePermutation {
     public static void main(String args[]){
 
         String palindrome = getInput();
-        countCharacters(palindrome);
+        boolean result = countCharacters(palindrome);
+        if (result){
+            System.out.println("The string is a permutation!");
+        } else {
+            System.out.println("The string is not a permutation.");
+        }
 
 
     }
