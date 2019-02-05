@@ -18,8 +18,6 @@ import java.util.*;
 
 class PalindromePermutation {
 
-    private java.util.HashMap<Character, Integer> mapOfChars = new java.util.HashMap<Character, Integer>();
-
 
     private static String getInput(){
         String result;
@@ -29,12 +27,26 @@ class PalindromePermutation {
         return result;
     }
 
+    private static void countCharacters(String string){
+        java.util.HashMap<Character, Integer> mapOfChars = new java.util.HashMap<Character, Integer>();
+        for (Character c: string.replaceAll("\\s","").toLowerCase().toCharArray()){
+            if (mapOfChars.get(c) == null){
+                mapOfChars.put(c, 1);
+            } else {
+                mapOfChars.put(c, mapOfChars.get(c)+1);
+            }
+        }
+        System.out.println(mapOfChars);
+    }
+
 
 
 
     public static void main(String args[]){
 
         String palindrome = getInput();
+        countCharacters(palindrome);
+
 
     }
 }
