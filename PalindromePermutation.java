@@ -15,6 +15,12 @@ Thought process for MVP:
 - iterate through the char array, counting how many times each character appears
 - if there's more than one letter that's in the string that appears an odd number of times, it can't be a palindrome
 
+
+Next step will be to show permutations of the string. I can do this by using a StringBuilder
+and adding characters into the string builder, starting with the odd one in the centre, and then
+placing odd characters on each side, starting with the character that has the highest count and then
+working down from there.
+
  */
 
 import java.util.*;
